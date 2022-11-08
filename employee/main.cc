@@ -29,11 +29,13 @@ int main() {
            break;
         } else if (ADD) {//添加
             now.add_emp();
+            // test_add();     //测试添加功能
             break;
         } else if (DELETE) {//删除
 
         } else if (SHOW) {//显示
-
+            now.show_emp();
+            break;
         } else if (MODIFY) {//修改
 
         } else if (FIND) {//查找
