@@ -32,18 +32,23 @@ int main() {
             // test_add();     //测试添加功能
             break;
         } else if (DELETE) {//删除
-
+            now.de_emp();
+            break;
         } else if (SHOW) {//显示
             now.show_emp();
             break;
         } else if (MODIFY) {//修改
-
+            now.modify_emp();
+            break;
         } else if (FIND) {//查找
-
+            now.find_emp();
+            break;
         } else if (SORT) {//排序
-
+            now.sort_emp();
+            break;
         } else if (CLEAR) {//清空
-
+            now.clear_emp();
+            break;
         } else {
             system("cls");
         }
