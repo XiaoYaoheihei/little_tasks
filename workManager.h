@@ -31,5 +31,18 @@ public:
     bool m_fileempty;   //标志文件是否为空
     int get_num();      //统计文件中的人数
     void init_emp();    //初始化员工
+
+    int isexit(int id); //通过编号来判断职工是否存在
+    void de_emp();      //删除职工
+
+    void modify_emp();  //修改职工
+
+    void find_emp();    //查找职工
+    void find_way(int&);  //按照编号进行查找
+    void find_way(string&);//按照姓名进行查找
+
+    void sort_emp();    //对员工进行排序
+
+    void clear_emp();   //清空文件
 };
 

@@ -223,7 +223,200 @@ void workmanager::show_emp() {
     }
 }
 
+//删除职工信息
+void workmanager::de_emp() {
+    if (this->m_fileempty) {
+        cout << "文件不存在" << endl;
+    } else {
+        //按照职工编号进行删除
+        cout << "请输入你要删除的职工编号"  << endl;
+        int nowid;
+        cin >> nowid;
+        int index = this->isexit(nowid);
+        if (index == -1) {
+            cout << "删除失败，不存在此职工编号" << endl;
+        } else {
+            for (int i = index; i < this->m_enum; i++) {
+                this->m_array[i] = this->m_array[i+1];
+            }
+            this->m_enum--;
 
+            this->save();//删除之后同步保存数据
+            cout << "删除成功" << endl;
+        }
+    }
+}
+//判断职工是否存在
+int workmanager::isexit(int id) {
+    int index = -1;
+
+    for(int i = 0; i < this->m_enum; i++) {
+        if (this->m_array[i]->m_id == id) {
+            index = i;
+            break;
+        }
+    }
+    return index;
+}
+
+
+//修改职工信息
+void workmanager::modify_emp() {
+    if (this->m_fileempty) {
+        cout << "文件不存在" << endl;
+    } else {
+        cout << "请输入职工编号" << endl;
+        int nowid;
+        cin >> nowid;
+        int ret = this->isexit(nowid);
+        if (ret == -1) {
+            cout << "修改失败,不存在此人" << endl;
+        } else {
+            delete this->m_array[ret];
+            int newid = 0;
+            string newname;
+            int did = 0;
+
+            cout << "请输入新的职工编号" << endl;
+            cin >> newid;
+            cout << "请输入职工姓名" << endl;
+            cin >> newname;
+            cout << "请输入岗位编号" << endl;
+            cout << "1、普通职工" << endl;
+			cout << "2、经理" << endl;
+			cout << "3、老板" << endl;
+            cin >> did;
+
+            worker * now = NULL;
+            switch (did)
+            {
+            case 1:
+                now = new employee(newid, newname, did);
+                break;
+            case 2:
+                now = new manager(newid, newname, did);
+                break;
+            case 3:
+                now = new boss(newid, newname, did);
+                break;
+            default:
+                break;
+            }
+
+            this->m_array[ret] = now;//更改数据到数组当中去
+            cout << "修改成功" << endl;
+            this->save();//保存到文件当中去
+        }
+    }
+}
+
+//查找职工信息
+void workmanager::find_emp() {
+    if (this->m_fileempty) {
+        cout << "文件不存在" << endl;
+    } else {
+        cout << "请输入查找的方式：" << endl;
+		cout << "1、按职工编号查找" << endl;
+		cout << "2、按姓名查找" << endl;
+
+		int select = 0;
+		cin >> select;
+        if (select == 1) {
+            //按照职工编号进行查找
+            int id;
+            cout << "请输入查找的职工编号：" << endl;
+            cin >> id;
+            this->find_way(id);
+        } else if (select == 2) {
+            //按照职工姓名进行查找
+            string name;
+            cout << "请输入查找的姓名：" << endl;
+            cin >> name;
+            this->find_way(name);
+        } else {
+            cout << "输入选项有问题" << endl;
+        }
+    }
+}
+
+void workmanager::find_way(int& id) {
+    int ret = this->isexit(id);
+    if (ret == -1) {
+        cout << "没有查找到此人" << endl;
+    } else {
+        cout << "查找成功！该职工信息如下：" << endl;
+        this->m_array[ret]->showinfo();
+    }
+}
+void workmanager::find_way(string& name) {
+    bool flag = false;
+    for (int i = 0; i< this->m_enum; i++) {
+        if (this->m_array[i]->m_name == name) {
+            cout << "查找成功,职工的信息如下" << endl;
+            this->m_array[i]->showinfo();
+            flag = true;
+        }
+    }
+    if (flag == false) {
+        cout << "查找失败,查无此人" << endl;
+    }
+}
+
+//职工排序
+void workmanager::sort_emp() {
+    if (this->m_fileempty) {
+        cout << "文件不存在" << endl;
+    } else {
+        cout << "请选择排序方式： " << endl;
+		cout << "1、按职工号进行升序" << endl;
+		cout << "2、按职工号进行降序" << endl;
+
+		int select = 0;
+		cin >> select;
+
+        for (int i = 0; i < this->m_enum; i++) {
+            int min = i;//声明下标
+            for (int j = i+1; j < this->m_enum; j++) {
+                if (select == 1) {
+                    //按照升序方式
+                    if (m_array[min]->m_id > m_array[j]->m_id) {
+                        min = j;
+                    }
+                } else {
+                    //按照降序方式
+                    if (m_array[min]->m_id < m_array[j]->m_id) {
+                        min = j;
+                    }
+                }
+
+                if (i != min) {
+                    worker * temp = m_array[i];
+                    m_array[i] = m_array[min];
+                    m_array[min] = temp;
+                } 
+            }
+
+            cout << "排序成功" << endl;
+            //测试是否排序成功
+            // this->save();
+            // this->show_emp();
+        }
+    }
+}
+
+//清空文件
+void workmanager::clear_emp() {
+    cout << "确认清空？" << endl;
+	cout << "1、确认" << endl;
+	cout << "2、返回" << endl;
+
+    int select = 0;
+	cin >> select;
+    if (select == 1) {
+        //以trunc模式打开，如果存在删除文件并且重新创建
+        ofstream ofs(FILENAME, ios::trunc);
+    } 
+}
 workmanager::~workmanager() {
     if (this->m_array != NULL) {
         delete[] this->m_array;
