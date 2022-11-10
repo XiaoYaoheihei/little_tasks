@@ -415,10 +415,29 @@ void workmanager::clear_emp() {
     if (select == 1) {
         //以trunc模式打开，如果存在删除文件并且重新创建
         ofstream ofs(FILENAME, ios::trunc);
+        ofs.close();
+        if (this->m_array != NULL) {
+            for (int i = 0; i < this->m_enum; i++) {
+                if (this->m_array[i] != NULL) {
+                    delete this->m_array[i];
+                }
+            }
+        }
+        this->m_enum = 0;
+        delete[] this->m_array;
+        this->m_array = NULL;
+        this->m_fileempty = true;
     } 
+    cout << "清空成功" << endl;
 }
 workmanager::~workmanager() {
     if (this->m_array != NULL) {
+        //首先释放掉二维指针中的内容
+        for(int i = 0; i < this->m_enum; i++) {
+            if (this->m_array[i] != NULL) {
+                delete this->m_array[i];
+            }
+        }
         delete[] this->m_array;
     }
 }
