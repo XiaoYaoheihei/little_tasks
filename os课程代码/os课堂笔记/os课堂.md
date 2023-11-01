@@ -109,7 +109,7 @@ Q：能不能buffer不互斥访问，pro和con进入到buffer中后再判断能�
 
 #### 三层调度之间的联系：
 
-![三层调度联系以及对比](E:\os图片\三层调度联系以及对比.png)
+![三层调度联系以及对比](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%B8%89%E5%B1%82%E8%B0%83%E5%BA%A6%E8%81%94%E7%B3%BB%E4%BB%A5%E5%8F%8A%E5%AF%B9%E6%AF%94.png)
 
 #### 进程状态新增——挂起状态
 
@@ -117,9 +117,9 @@ Q：能不能buffer不互斥访问，pro和con进入到buffer中后再判断能�
 
 **注意挂起和阻塞的区别**
 
-![进程七状态模型](E:\os图片\进程七状态模型.png)
+![进程七状态模型](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%BF%9B%E7%A8%8B%E4%B8%83%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B.png)
 
-![七状态模型补充](E:\os图片\七状态模型补充.png)
+![七状态模型补充](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%B8%83%E7%8A%B6%E6%80%81%E6%A8%A1%E5%9E%8B%E8%A1%A5%E5%85%85.png)
 
 ### 调度时机，调度算法作用，调度过程的主要操作（进程的切换过程）
 
@@ -161,7 +161,7 @@ ps：不能进行进程调度与切换的情况：
 
 #### 进程的切换与过程
 
-![进程切换](E:\os图片\进程切换.png)
+![进程切换](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%BF%9B%E7%A8%8B%E5%88%87%E6%8D%A2.png)
 
 主要完成了两个任务：当前进程保存现场，加载进程加载现场。
 
@@ -171,13 +171,13 @@ ps：不能进行进程调度与切换的情况：
 
 #### 调度程序/调度器
 
-![调度程序](E:\os图片\调度程序.png)
+![调度程序](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%B0%83%E5%BA%A6%E7%A8%8B%E5%BA%8F.png)
 
 支持的粒度是进程
 
 支持的粒度是线程
 
-![线程调度](E:\os图片\线程调度.png)
+![线程调度](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6.png)
 
 ### 周转时间，平均周转时间，带权周转时间
 
@@ -201,9 +201,9 @@ ps：不能进行进程调度与切换的情况：
 
 **重点考虑的是等待时间**。
 
-![先来先服务](E:\os图片\先来先服务.png)
+![先来先服务](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%85%88%E6%9D%A5%E5%85%88%E6%9C%8D%E5%8A%A1.png)
 
-![FCFS](E:\os图片\FCFS.png)
+![FCFS](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/FCFS.png)
 
 #### 短作业优先（SJF）--默认的是非抢占式
 
@@ -215,17 +215,17 @@ ps：不能进行进程调度与切换的情况：
 
 **重点考虑的是执行时间**。
 
-![短作业优先](E:\os图片\短作业优先.png)
+![短作业优先](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%9F%AD%E4%BD%9C%E4%B8%9A%E4%BC%98%E5%85%88.png)
 
-![SJF](E:\os图片\SJF.png)
+![SJF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/SJF.png)
 
 #### 高响应比优先（HRRN）
 
 为了避免上面两种单一的考虑，此算法**综合考虑等待时间和执行时间。**
 
-![高响应比优先](E:\os图片\高响应比优先.png)
+![高响应比优先](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%AB%98%E5%93%8D%E5%BA%94%E6%AF%94%E4%BC%98%E5%85%88.png)
 
-![HRRN](E:\os图片\HRRN.png)
+![HRRN](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/HRRN.png)
 
 #### 时间片轮转（RR）
 
@@ -233,25 +233,25 @@ ps：不能进行进程调度与切换的情况：
 
 时间片太大，会退化成FCFS，因此不能太大，会**增大进程响应时间**。时间片太小，会导致进程切换过于频繁，系统会有开销。
 
-![时间片轮转](E:\os图片\时间片轮转.png)
+![时间片轮转](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%97%B6%E9%97%B4%E7%89%87%E8%BD%AE%E8%BD%AC.png)
 
-![RR1](E:\os图片\RR1.png)
+![RR1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/RR1.png)
 
-![RR2](E:\os图片\RR2.png)
+![RR2](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/RR2.png)
 
-![RR3](E:\os图片\RR3.png)
+![RR3](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/RR3.png)
 
-![RR4](E:\os图片\RR4.png)
+![RR4](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/RR4.png)
 
 #### 优先级调度算法
 
 每个进程/作业都有自己的优先级，调度的时候选择优先级最高的进程/作业。——优先数和优先级依据题目。
 
-![优先级调度](E:\os图片\优先级调度.png)
+![优先级调度](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6.png)
 
-![非抢占的优先级调度](E:\os图片\非抢占的优先级调度.png)
+![非抢占的优先级调度](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%9D%9E%E6%8A%A2%E5%8D%A0%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6.png)
 
-![抢占式优先级调度](E:\os图片\抢占式优先级调度.png)
+![抢占式优先级调度](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6.png)
 
 补充信息：
 
@@ -259,7 +259,7 @@ ps：不能进行进程调度与切换的情况：
 
 动态优先级：创建进程的时候会有一个初始值，会根据情况动态调整。
 
-![补充优先级调度](E:\os图片\补充优先级调度.png)
+![补充优先级调度](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%A1%A5%E5%85%85%E4%BC%98%E5%85%88%E7%BA%A7%E8%B0%83%E5%BA%A6.png)
 
 #### 多级反馈队列算法思想（不在学校期末考试范围内）
 
@@ -271,7 +271,7 @@ Unix采用的方式
 
 在并发环境下，各个进程因为资源竞争而造成的一种互相等待对方手里的资源，导致各个进程都处于阻塞态，无法向前推进的现象就是“死锁”。
 
-![死锁，饥饿，死循环区别](E:\os图片\死锁，饥饿，死循环区别.png)
+![死锁，饥饿，死循环区别](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%AD%BB%E9%94%81%EF%BC%8C%E9%A5%A5%E9%A5%BF%EF%BC%8C%E6%AD%BB%E5%BE%AA%E7%8E%AF%E5%8C%BA%E5%88%AB.png)
 
 ### 死锁问题产生的原因（必要条件）
 
@@ -305,7 +305,7 @@ Unix采用的方式
 
 安全序列，不安全状态，安全状态
 
-![避免死锁的概念](E:\os图片\避免死锁的概念.png)
+![避免死锁的概念](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81%E7%9A%84%E6%A6%82%E5%BF%B5.png)
 
 银行家算法
 
@@ -317,9 +317,9 @@ Unix采用的方式
 
 ### 银行家算法设计思想
 
-![银行1](E:\os图片\银行1.png)
+![银行1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%93%B6%E8%A1%8C1.png)
 
-![银行2](E:\os图片\银行2.png)
+![银行2](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%93%B6%E8%A1%8C2.png)
 
 ## 内存概述和连续分配
 
@@ -339,7 +339,7 @@ Unix采用的方式
 
 **为了防止越界，通过硬件检查程序是否越界——基址寄存器（起始物理地址）和限长寄存器（最大逻辑地址）**
 
-![存储保护](E:\os图片\存储保护.png)
+![存储保护](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%AD%98%E5%82%A8%E4%BF%9D%E6%8A%A4.png)
 
 #### 深入理解什么是地址重定位，为什么要设计地址重定位？动态重定位和静态重定位的含义。理解程序如何装入内存？
 
@@ -353,23 +353,23 @@ Unix采用的方式
 
 绝对装入：在编译的时候就将产生绝对地址。
 
-![绝对装入](E:\os图片\绝对装入.png)
+![绝对装入](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%BB%9D%E5%AF%B9%E8%A3%85%E5%85%A5.png)
 
 静态重定位：将装入模块装入内存中的时候再对地址进行重定位。
 
-![静态装入](E:\os图片\静态装入.png)
+![静态装入](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%9D%99%E6%80%81%E8%A3%85%E5%85%A5.png)
 
 动态重定位：装入的时候还是逻辑地址，真正执行程序的时候才会进行地址转化。需要一个**重定位寄存器**支持。
 
-![动态重定位](E:\os图片\动态重定位.png)
+![动态重定位](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8A%A8%E6%80%81%E9%87%8D%E5%AE%9A%E4%BD%8D.png)
 
 #### 了解程序是如何进行链接？
 
-![静态编译](E:\os图片\静态编译.png)
+![静态编译](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91.png)
 
-![装入时链接](E:\os图片\装入时链接.png)
+![装入时链接](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%A3%85%E5%85%A5%E6%97%B6%E9%93%BE%E6%8E%A5.png)
 
-![运行时动态链接](E:\os图片\运行时动态链接.png)
+![运行时动态链接](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5.png)
 
 #### 内存如何进行扩充大小——引入虚拟内存
 
@@ -381,13 +381,13 @@ Unix采用的方式
 
 - 单一连续分配
 
-![单一连续分配](E:\os图片\单一连续分配.png)
+![单一连续分配](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8D%95%E4%B8%80%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D.png)
 
 - 固定分区分配
 
 整个用户空间划分成若干个固定大小的分区。
 
-![固定分区分配](E:\os图片\固定分区分配.png)
+![固定分区分配](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%9B%BA%E5%AE%9A%E5%88%86%E5%8C%BA%E5%88%86%E9%85%8D.png)
 
 建立一个数据结构——分区说明表来实现对各个分区的分配与回收。每一个表项包括对应分区的大小，起始地址，状态（是否已经被分配）。
 
@@ -401,7 +401,7 @@ Unix采用的方式
 
   - 数据结构记录内存的使用情况
 
-    ![空闲分区数据结构](E:\os图片\空闲分区数据结构.png)
+    ![空闲分区数据结构](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A9%BA%E9%97%B2%E5%88%86%E5%8C%BA%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.png)
 
   - 多个空闲分区满足条件的时候，选择哪个分区进行分配。
 
@@ -421,7 +421,7 @@ Unix采用的方式
 
 第一次来15MB，第二次来8MB。
 
-![FF](E:\os图片\FF.png)
+![FF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/FF.png)
 
 ###### NF——循环首次适应
 
@@ -429,7 +429,7 @@ Unix采用的方式
 
 不需要对链表进行重新排列，链表是循环链表的方式。
 
-![NF](E:\os图片\NF.png)
+![NF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/NF.png)
 
 ###### BF——最佳适应
 
@@ -437,7 +437,7 @@ Unix采用的方式
 
 会产生很多外部碎片。
 
-![BF](E:\os图片\BF.png)
+![BF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/BF.png)
 
 ###### WF——最坏适应
 
@@ -447,7 +447,7 @@ Unix采用的方式
 
 缺点：会导致较大的连续空闲区被迅速用完。
 
-![WF](E:\os图片\WF.png)
+![WF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/WF.png)
 
 产生了外部碎片之后，通过**紧凑**（compaction）的技术来解决外部碎片技术。
 
@@ -465,9 +465,9 @@ Unix采用的方式
 
 缺点：由程序员声明覆盖结构，对用户不透明。
 
-![覆盖技术](E:\os图片\覆盖技术.png)
+![覆盖技术](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%A6%86%E7%9B%96%E6%8A%80%E6%9C%AF.png)
 
-![覆盖技术1](E:\os图片\覆盖技术1.png)
+![覆盖技术1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%A6%86%E7%9B%96%E6%8A%80%E6%9C%AF1.png)
 
 ##### 交换技术（中级调度/内存调度）
 
@@ -475,7 +475,7 @@ Unix采用的方式
 
 PCB会常驻内存，不会被换出外存。
 
-![交换技术三个问题](E:\os图片\交换技术三个问题.png)
+![交换技术三个问题](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF%E4%B8%89%E4%B8%AA%E9%97%AE%E9%A2%98.png)
 
 ##### 虚拟存储技术
 
@@ -539,7 +539,7 @@ PCB会常驻内存，不会被换出外存。
 
 **千万记得还要判断页号是否越界**
 
-![img](E:\os图片\页表计算.png)
+![img](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%A1%B5%E8%A1%A8%E8%AE%A1%E7%AE%97.png)
 
 
 
@@ -568,13 +568,13 @@ PCB会常驻内存，不会被换出外存。
 
 根据一级拿到块号中的页表，根据二级拿到相应的内存块号，根据内存块号和页内偏移量计算出最终要访问的物理地址。
 
-![img](E:\os图片\一级页表和二级页表.png)
+![img](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%B8%80%E7%BA%A7%E9%A1%B5%E8%A1%A8%E5%92%8C%E4%BA%8C%E7%BA%A7%E9%A1%B5%E8%A1%A8.png)
 
 #### 需要注意的问题：
 
 1.如果采用多级页表机制，则**各级页表的大小不能超过一个页面**。
 
-![两级页表注意](E:\os图片\两级页表注意.png)
+![两级页表注意](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%B8%A4%E7%BA%A7%E9%A1%B5%E8%A1%A8%E6%B3%A8%E6%84%8F.png)
 
 2.两级页表的**访存次数分析（假设此时没有快表）：一共需要访问三次内存**；但是一级页表需要访问两次内存就可以了。
 
@@ -690,29 +690,29 @@ for (int i = 0; i < 18; i++) {
 
 #### 最佳置换算法——OPT
 
-![OPT](E:\os图片\OPT.png)
+![OPT](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/OPT.png)
 
 此算法可以保证最低的缺页率，但是实际上只有在执行的过程中才能知道接下来要访问哪一个页面。OS无法提前知道页面的访问序列，因此此**算法无法实现**。
 
 #### 先进先出算法——FIFO
 
-![FIFO](E:\os图片\FIFO.png)
+![FIFO](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/FIFO.png)
 
 #### LRU算法
 
-![LRU](E:\os图片\LRU.png)
+![LRU](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/LRU.png)
 
 #### CLOCK算法——LRU近似算法（NRU）
 
 扫描的指针会指向当前置换页的下一个页面。
 
-![CLOCK](E:\os图片\CLOCK.png)
+![CLOCK](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/CLOCK.png)
 
 #### 改进型的CLOCK算法
 
-![改进的CLOCK](E:\os图片\改进的CLOCK.png)
+![改进的CLOCK](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%94%B9%E8%BF%9B%E7%9A%84CLOCK.png)
 
-![改进的CLOCK1](E:\os图片\改进的CLOCK1.png)
+![改进的CLOCK1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%94%B9%E8%BF%9B%E7%9A%84CLOCK1.png)
 
 ## 输入输出系统（IO设备）
 
@@ -754,19 +754,19 @@ OS要给用户提供一个简单的视图——文件视图。（为了让out指
 
 - 单缓冲
 
-  ![单缓冲0](E:\os图片\单缓冲0.png)
+  ![单缓冲0](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8D%95%E7%BC%93%E5%86%B20.png)
 
-  ![单缓冲](E:\os图片\单缓冲.png)
+  ![单缓冲](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8D%95%E7%BC%93%E5%86%B2.png)
 
-  ![单缓冲2](E:\os图片\单缓冲2.png)
+  ![单缓冲2](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8D%95%E7%BC%93%E5%86%B22.png)
 
   **采用单缓冲，处理一块数据块的平均耗时是Max(C,T)+M**
 
 - 双缓冲（缓冲对Buffer）
 
-  ![双缓冲](E:\os图片\双缓冲.png)
+  ![双缓冲](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8F%8C%E7%BC%93%E5%86%B2.png)
 
-  ![双缓冲1](E:\os图片\双缓冲1.png)
+  ![双缓冲1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%8F%8C%E7%BC%93%E5%86%B21.png)
 
   **采用双缓冲，处理一个数据块的平均耗时是Max(T,C+M);与此同时也可以粗略地估计为Max(T,C)**
 
@@ -802,7 +802,7 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
 一个IO控制器会对应多个设备；寄存器会有多个以此对应多个设备的相应数据。
 
-![控制器编址](E:\os图片\控制器编址.png)
+![控制器编址](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%8E%A7%E5%88%B6%E5%99%A8%E7%BC%96%E5%9D%80.png)
 
 #### IO控制方式
 
@@ -820,9 +820,9 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
   - 数据流向：IO<->CPU<->内存
 
-    ![程序直接控制方式](E:\os图片\程序直接控制方式.png)
+    ![程序直接控制方式](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A8%8B%E5%BA%8F%E7%9B%B4%E6%8E%A5%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F.png)
 
-  ![程序直接控制方式2](E:\os图片\程序直接控制方式2.png)
+  ![程序直接控制方式2](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A8%8B%E5%BA%8F%E7%9B%B4%E6%8E%A5%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F2.png)
 
 - 中断驱动方式
 
@@ -848,21 +848,21 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
   - **CPU发出指令，DMA控制器接受指令之后，开始读写操作，完成之后发出中断信号。需要注意的是DMA控制器也是每次读取一个字放到DC中，然后将DC中的数据放入到内存中。最后完成的结果呈现出来的是传送单位是块。**
 
-    ![DMA控制器](E:\os图片\DMA控制器.png)
+    ![DMA控制器](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/DMA%E6%8E%A7%E5%88%B6%E5%99%A8.png)
 
 - **通道控制方式**
 
   - 通道一种硬件，可以理解成弱鸡版的CPU。**通道可以识别并且执行一系列的通道指令**。
 
-    ![通道控制方式](E:\os图片\通道控制方式.png)
+    ![通道控制方式](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%80%9A%E9%81%93%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F.png)
 
 四种方式对比：
 
-![四种IO方式对比](E:\os图片\四种IO方式对比.png)
+![四种IO方式对比](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%80%9A%E9%81%93%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F.png)
 
 #### IO软件的层次结构（一定要看！）
 
-![层次结构](E:\os图片\层次结构.png)
+![层次结构](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84.png)
 
 ##### 用户层软件：
 
@@ -881,7 +881,7 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 - 设备的分配与回收，设备是一种临界资源
 - **数据缓冲区管理**
 - **建立逻辑设备名到物理设备名之间的映射关系，根据设备的类型选择调用相应的驱动程序**
-- ![逻辑设备](E:\os图片\逻辑设备.png)
+- ![逻辑设备](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%80%BB%E8%BE%91%E8%AE%BE%E5%A4%87.png)
 
 ##### 设备驱动程序：
 
@@ -891,7 +891,7 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
 进行中断处理，也会和硬件直接打交道
 
-![中断处理程序](E:\os图片\中断处理程序.png)
+![中断处理程序](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E4%B8%AD%E6%96%AD%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.png)
 
 ##### 硬件：
 
@@ -910,7 +910,7 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
 脱机：脱离主机的控制进行的输入与输出。
 
-![假脱机](E:\os图片\假脱机.png)
+![假脱机](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%81%87%E8%84%B1%E6%9C%BA.png)
 
 
 
@@ -918,7 +918,7 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
 共享打印机原理分析：
 
-![共享打印机](E:\os图片\共享打印机.png)
+![共享打印机](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E5%85%B1%E4%BA%AB%E6%89%93%E5%8D%B0%E6%9C%BA.png)
 
 虽然系统中只有一台打印机，但是每一个进程提出打印请求的时候系统都会在输出井中为其分配一个存储区，使得每个进程都感觉自己独占了一台设备。
 
@@ -942,27 +942,27 @@ IO设备一般都分为机械部件和电子部件，**CPU是通过电子部件�
 
 - 先来先服务策略（FCFS）
 
-  ![磁道FCFS](E:\os图片\磁道FCFS.png)
+  ![磁道FCFS](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A3%81%E9%81%93FCFS.png)
 
 - 最短寻道时间优先(SSTF)——造成“饥饿”现象，不公平，一般用作参考值
 
   优先处理的磁道是与当前磁头最近的磁道。可以保证每次的寻道时间最短，但是不能保证总的寻道时间最短。
 
-  ![磁道SSTF](E:\os图片\磁道SSTF.png)
+  ![磁道SSTF](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A3%81%E9%81%93SSTF.png)
 
 - 扫描算法SCAN（电梯调度算法）（经常使用）
 
   只有磁头移动到最外侧磁道的时候才可以向内移动，移动到最内侧磁道的时候才可以往外移动。（有方向性）
 
-  ![磁道SCAN](E:\os图片\磁道SCAN.png)
+  ![磁道SCAN](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A3%81%E9%81%93SCAN.png)
 
 - LOOK调度算法（解决SCAN其中的一个缺点）
 
-  ![磁道LOOK](E:\os图片\磁道LOOK.png)
+  ![磁道LOOK](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A3%81%E9%81%93LOOK.png)
 
 - 循环扫描算法CSCAN（解决SCAN其中的一个缺点）
 
-  ![磁道CSCAN](E:\os图片\磁道CSCAN.png)
+  ![磁道CSCAN](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%A3%81%E9%81%93CSCAN.png)
 
 ​		
 
@@ -1005,9 +1005,9 @@ open()过程干了什么事情，他的意义是什么？
 
 **OS也是以块为单位为文件分配存储空间的**，即使一个文件只有1b，但是他依然是需要占用1kb的磁盘块大小。外存中数据读入内存的时候也是以块为单位。
 
-![文件存放](E:\os图片\文件存放.png)
+![文件存放](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%96%87%E4%BB%B6%E5%AD%98%E6%94%BE.png)
 
-![文件存放1](E:\os图片\文件存放1.png)
+![文件存放1](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%96%87%E4%BB%B6%E5%AD%98%E6%94%BE1.png)
 
 ### 文件的逻辑结构
 
@@ -1021,15 +1021,15 @@ open()过程干了什么事情，他的意义是什么？
 
 文件中记录一个接一个地顺序排列。
 
-![顺序文件](E:\os图片\顺序文件.png)
+![顺序文件](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%A1%BA%E5%BA%8F%E6%96%87%E4%BB%B6.png)
 
-![顺序文件随机查找](E:\os图片\顺序文件随机查找.png)
+![顺序文件随机查找](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%A1%BA%E5%BA%8F%E6%96%87%E4%BB%B6%E9%9A%8F%E6%9C%BA%E6%9F%A5%E6%89%BE.png)
 
 ##### 索引文件
 
 为了解决可变长记录文件中随机查找某一个记录的需求，建立了一张索引表来加快文件检索速度。
 
-![索引文件](E:\os图片\索引文件.png)
+![索引文件](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%B4%A2%E5%BC%95%E6%96%87%E4%BB%B6.png)
 
 ##### 索引顺序文件
 
@@ -1039,7 +1039,7 @@ open()过程干了什么事情，他的意义是什么？
 
 **首先通过索引表查找到分组，找到分组之后再在分组中顺序查找记录。**——这种设计思路很妙也很常见。
 
-![检索效率分析](E:\os图片\检索效率分析.png)
+![检索效率分析](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%A3%80%E7%B4%A2%E6%95%88%E7%8E%87%E5%88%86%E6%9E%90.png)
 
 ### 文件目录
 
@@ -1053,19 +1053,19 @@ open()过程干了什么事情，他的意义是什么？
 
 一层一层通过每一个目录的FCB集合信息，查找到需要进入的目录项之后，从DISK中调入新的FCB集合信息，接着查找。
 
-![FCB](E:\os图片\FCB.png)
+![FCB](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/FCB.png)
 
 #### Inode（索引节点）
 
 我们按照文件名进行查询的时候其实并不需要除了文件名之外的所有信息，可以将这些信息统一存放到另外的位置，然后**使用一个索引结点进行指向。**
 
-![索引结点](E:\os图片\索引结点.png)
+![索引结点](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%B4%A2%E5%BC%95%E7%BB%93%E7%82%B9.png)
 
-![索引结点补充](E:\os图片\索引结点补充.png)
+![索引结点补充](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E7%B4%A2%E5%BC%95%E7%BB%93%E7%82%B9%E8%A1%A5%E5%85%85.png)
 
 ### 文件的物理结构（文件分配方式）——十分重要
 
-![文件块](E:\os图片\文件块.png)
+![文件块](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%96%87%E4%BB%B6%E5%9D%97.png)
 
 对磁盘块进行管理的方式：
 
@@ -1075,7 +1075,7 @@ open()过程干了什么事情，他的意义是什么？
 
 - 连续分配
 
-![连续分配](E:\os图片\连续分配.png)
+![连续分配](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E8%BF%9E%E7%BB%AD%E5%88%86%E9%85%8D.png)
 
 优点：支持顺序访问和直接访问（随机访问）；连续分配的的文件在顺序读/写时速度最快。
 
@@ -1087,13 +1087,13 @@ open()过程干了什么事情，他的意义是什么？
 
 隐式链接：**逻辑块号转化成物理块号的过程中需要读磁盘操作。**
 
-![隐式链接分配](E:\os图片\隐式链接分配.png)
+![隐式链接分配](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E9%9A%90%E5%BC%8F%E9%93%BE%E6%8E%A5%E5%88%86%E9%85%8D.png)
 
 优点：方便文件进行拓展
 
 显式链接：**逻辑块号转化成物理块号的过程中不需要读磁盘操作，只需要通过FAT表就可以知道物理块号信息。**
 
-![显式链接分配](E:\os图片\显式链接分配.png)
+![显式链接分配](https://github.com/XiaoYaoheihei/little_tasks/blob/main/os%E8%AF%BE%E7%A8%8B%E4%BB%A3%E7%A0%81/os%E5%9B%BE%E7%89%87/%E6%98%BE%E5%BC%8F%E9%93%BE%E6%8E%A5%E5%88%86%E9%85%8D.png)
 
 - 索引分配
 
